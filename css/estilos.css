@@ -179,4 +179,15 @@ iframe{
     .h3inicio{
         font-size: 1.4rem;
     }
+    .nav-link{
+        padding: 8px 8px;
+    }
+}
+@media (max-width:380px){
+    .nav-link{
+        padding: 4px 4px;
+        justify-content: space-between;}
+    h1{
+        font-size: 1.8rem;
+    }
 }
