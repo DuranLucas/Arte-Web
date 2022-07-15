@@ -11,6 +11,18 @@ body a {
 body .fondofooter {
   background-color: rgba(255, 255, 255, 0.5);
 }
+body .fondofooter .footerig {
+  color: rgb(247, 59, 26);
+}
+body .fondofooter .footerig:hover {
+  color: rgb(192, 34, 179);
+}
+body .fondofooter .footerfb {
+  color: blue;
+}
+body .fondofooter .footerfb:hover {
+  color: rgb(35, 140, 209);
+}
 body footer {
   border-top: 2px solid rgb(80, 79, 79);
   border-bottom: 2px solid rgb(80, 79, 79);
@@ -18,14 +30,43 @@ body footer {
 }
 body .header {
   background-color: #20bbb3;
+  font-family: cursive;
 }
 body .header h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 body .mainindex {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+body .mainindex .contenedor1 {
+  width: 60%;
+  margin-bottom: 0px;
+  font-family: cursive;
+}
+body .mainindex .contenedor2 {
+  width: 79%;
+  margin-bottom: 0px;
+}
+body .mainindex .contenedor2 .contindex2 span {
+  font-family: cursive;
+  margin-bottom: 15px;
+}
+body .mainindex .contenedor2 .contindex2 span:hover {
+  background-color: rgba(21, 117, 161, 0.4);
+}
+body .mainindex .contenedor3 {
+  margin-bottom: 0px;
+}
+body .mainindex .contenedor3 p {
+  font-size: 1.1rem;
+  justify-content: center;
+  padding: 5px;
+  margin-top: 10px;
+}
+body .mainindex .contenedor4 .parrafos {
+  font-size: 1.1rem;
 }
 body header {
   background-color: rgba(0, 0, 0, 0.1);
@@ -33,63 +74,74 @@ body header {
   border-width: 2px 0;
   box-shadow: inset 1.5em 2em 1.5em rgba(0, 0, 0, 0.15), inset 0.2em 0.125em 0.5em rgba(0, 0, 0, 0.15);
 }
+body .bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+body h3 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
 
-.carrousele {
+.estructura {
   display: flex;
   justify-content: center;
   margin: 30px 30px;
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #20bbb3;
 }
-.carrousele .titulosprod {
+.estructura .titulosprod {
   text-align: center;
   margin: 10px;
   font-size: 2rem;
   margin-bottom: 20px;
   text-decoration: underline;
+  font-family: cursive;
 }
-.carrousele .carrete {
+.estructura .carrete {
   width: 400px;
   border: 2px solid black;
   padding: 0px;
   margin: 25px;
   justify-content: center;
 }
-.carrousele .carrete .img-catalogo {
+.estructura .carrete .img-catalogo {
   height: 400px;
 }
-.carrousele .img-left {
+.estructura .img-left {
   float: none;
   margin: 0 auto 0;
 }
-.carrousele .img-responsive {
+.estructura .img-responsive {
   display: block;
   max-width: 100%;
   height: auto;
 }
-.carrousele .img-nosotros {
+.estructura .img-nosotros {
   margin-bottom: 20px;
 }
-.carrousele iframe {
+.estructura iframe {
   margin-bottom: 20px;
 }
-.carrousele .pnosotros {
+.estructura .pnosotros {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
 }
-.carrousele .h2prod {
+.estructura .h2prod {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
-.carrousele .h3index {
+.estructura .h3index {
   display: flex;
   justify-content: center;
   text-align: center;
   font-size: 1.4rem;
 }
-.carrousele .templodelarte h3 {
-  font-size: 1.3rem;
+.estructura .templodelarte h3 {
+  font-size: 1.5rem;
+  font-family: cursive;
   text-align: center;
   justify-content: center;
   border-bottom: 2px solid rgb(133, 128, 128);
@@ -98,53 +150,19 @@ body header {
   width: 100%;
   margin-bottom: 20px;
 }
-
-h3 {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.contenedor1 {
-  width: 60%;
-  margin-bottom: 0px;
-}
-
-.contenedor2 {
-  width: 79%;
-  margin-bottom: 0px;
-}
-.contenedor2 .contindex2 span {
-  margin-bottom: 15px;
-}
-.contenedor2 .contindex2 span:hover {
-  background-color: rgba(21, 117, 161, 0.4);
-}
-
-.contenedor3 {
-  margin-bottom: 0px;
-}
-.contenedor3 p {
-  font-size: 1.1rem;
-  justify-content: center;
-  padding: 5px;
-  margin-top: 10px;
-}
-
-.contenedor4 .parrafos {
-  font-size: 1.1rem;
-}
-
-.logo {
+.estructura .logo {
   width: 80px;
   height: 80px;
   margin: 10px 0px;
 }
-
-.logo2 {
+.estructura .logo2 {
   width: 70px;
   height: 70px;
   margin: 10px 10px;
+}
+.estructura h5 {
+  font-size: 1.4rem;
+  font-family: cursive;
 }
 
 .contindex {
@@ -183,7 +201,7 @@ h3 {
 
 .btn {
   margin-bottom: 15px;
-  border: 1px solid black;
+  border: 2px solid rgb(114, 106, 106);
   background-color: #fff;
 }
 
@@ -206,67 +224,53 @@ h3 {
   color: rgb(71, 66, 69);
 }
 
-.footerig {
-  color: rgb(156, 45, 147);
-}
-
-.footerfb {
-  color: blue;
-}
-
 @media (max-width: 992px) {
   h3 {
     width: 100% !important;
     text-align: center;
   }
-  .carrousele {
+  .estructura {
     margin: 20px 20px;
   }
   body .header h1 {
-    font-size: 3.2rem;
+    font-size: 2.7rem;
   }
   .cajaspc {
     display: none;
-  }
-  .contenedor1 {
-    margin-bottom: 0px;
-  }
-  .contenedor2 {
-    margin-bottom: 0px;
-  }
-  .contenedor3 {
-    margin-bottom: 0px;
   }
 }
 @media (min-width: 993px) {
   .cajascel {
     display: none;
   }
+  body .header a {
+    margin: 5px 30px;
+  }
+  .iconosnav {
+    font-size: 1.4rem;
+  }
+  .iconosnavactivo {
+    font-size: 1.4rem;
+  }
 }
 @media (max-width: 499px) {
-  .carrousele {
+  .estructura {
     margin: 10px 10px;
   }
-  .nav-link {
+  .estructura .carrete .img-catalogo {
+    height: 340px;
+  }
+  .header .nav-link {
     padding: 8px 8px;
   }
   footer div span {
     font-size: 0.9rem;
   }
-  .img-catalogo {
-    height: 340px;
-  }
-  .contenedor1 {
-    margin-bottom: 0px;
-  }
-  .contenedor2 {
-    margin-bottom: 0px;
-  }
-  .contenedor3 {
-    margin-bottom: 0px;
-  }
   body .header h1 {
-    font-size: 2.3rem;
+    font-size: 1.7rem;
+  }
+  body .header a {
+    margin-top: 10px;
   }
   .contindex2 .contindex5 {
     font-size: 1.3rem;
@@ -276,41 +280,22 @@ h3 {
   }
 }
 @media (max-width: 380px) {
-  .nav-link {
+  .header .nav-link {
     padding: 4px 4px;
     justify-content: space-between;
   }
   body .header h1 {
     font-size: 1.7rem;
   }
+  body .header a {
+    margin: 10px 2px;
+  }
   footer div span {
     font-size: 0.8rem;
   }
-  .img-catalogo {
+  .estructura .carrete .img-catalogo {
     height: 250px;
   }
-}
-.bi {
-  vertical-align: -0.125em;
-  fill: currentColor;
-}
-
-.nav-scroller {
-  position: relative;
-  z-index: 2;
-  height: 2.75rem;
-  overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
 }
 
 /*# sourceMappingURL=estilos.css.map */
