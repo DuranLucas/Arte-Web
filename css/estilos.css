@@ -76,6 +76,42 @@ body h3 {
   display: flex;
   align-items: center;
 }
+body #registroLogin {
+  display: flex;
+  background-color: rgba(60, 213, 233, 0.7);
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+body .login {
+  margin: 5px;
+  padding: 5px;
+  border: solid 2px rgb(223, 248, 252);
+  font-size: 0.7rem;
+}
+body .login input {
+  margin-bottom: 3px;
+}
+body .login h4 {
+  font-size: 1rem;
+  margin-left: 90px;
+  text-decoration: underline;
+}
+body .login #userRegistro {
+  margin-left: 23px;
+}
+body .login #emailRegistro {
+  margin-left: 35px;
+}
+body .login #userLogin {
+  margin-left: 23px;
+  margin-top: 15px;
+}
+body .login #submitLogin {
+  margin-left: 90px;
+}
+body .login #submitRegistro {
+  margin-left: 90px;
+}
 
 .estructura {
   display: flex;
@@ -272,6 +308,34 @@ body h3 {
   }
   .contindex .h3inicio {
     font-size: 1.1rem;
+  }
+  body .login {
+    font-size: 0.7rem;
+  }
+  body .login input {
+    width: 100%;
+  }
+  body .login h4 {
+    font-size: 0.8rem;
+    margin-left: 60px;
+  }
+  body .login #userRegistro {
+    margin-left: 0px;
+  }
+  body .login #emailRegistro {
+    margin-left: 0px;
+  }
+  body .login #userLogin {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  body .login #submitLogin {
+    margin-left: 35px;
+    width: 100px;
+  }
+  body .login #submitRegistro {
+    margin-left: 35px;
+    width: 100px;
   }
 }
 @media (max-width: 380px) {

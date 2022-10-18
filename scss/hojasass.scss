@@ -77,6 +77,44 @@ body {
         display: flex;
         align-items: center;
     }
+    #registroLogin{
+        display: flex;
+        background-color: rgb(60, 213, 233, 0.7);
+        justify-content: space-evenly;
+        align-content: space-between;
+    }
+    .login{
+        input{
+            margin-bottom: 3px;
+        }
+        h4{
+            font-size: 1rem;
+            margin-left: 90px;
+            text-decoration: underline;
+        }
+        margin: 5px;
+        padding: 5px;
+        border: solid 2px rgb(223, 248, 252);
+
+        font-size: 0.7rem;
+        #userRegistro{
+            margin-left: 23px;
+        }
+        #emailRegistro{
+            margin-left: 35px;
+        }
+        #userLogin{
+            margin-left: 23px;
+            margin-top: 15px;
+        }
+        #submitLogin{
+            margin-left: 90px;
+        }
+        #submitRegistro{
+            margin-left: 90px;
+        }
+
+    }
 }
 ////////////// Estructura //////////////
 .estructura{
@@ -276,6 +314,40 @@ body {
     .contindex .h3inicio{
         font-size: 1.1rem;
     }
+    body{
+
+    .login{
+        input{
+            width: 100%;
+        }
+        h4{
+            font-size: 0.8rem;
+            margin-left: 60px;
+        }
+
+        font-size: 0.7rem;
+        #userRegistro{
+            margin-left: 0px;
+        }
+        #emailRegistro{
+            margin-left: 0px;
+        }
+        #userLogin{
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        #submitLogin{
+            margin-left: 35px;
+            width: 100px;
+        }
+        #submitRegistro{
+            margin-left: 35px;
+            width: 100px;
+        }
+
+    }
+    }
+
 }
 @media (max-width:380px){
     .header .nav-link{
