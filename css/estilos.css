@@ -126,6 +126,9 @@ body .login #submitRegistro {
   text-decoration: underline;
   font-family: cursive;
 }
+.estructura .titulosprod2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .estructura .carrete {
   width: 400px;
   border: 2px solid black;
@@ -306,9 +309,6 @@ body .login #submitRegistro {
   }
   .contindex .h3inicio {
     font-size: 1.1rem;
-  }
-  body .login {
-    font-size: 0.7rem;
   }
   body .login input {
     width: 100%;
