@@ -86,31 +86,29 @@ body .login {
   margin: 5px;
   padding: 5px;
   border: solid 2px rgb(223, 248, 252);
+  border-radius: 10px;
   font-size: 0.7rem;
 }
 body .login input {
   margin-bottom: 3px;
+  width: 100%;
 }
 body .login h4 {
   font-size: 1rem;
   margin-left: 90px;
   text-decoration: underline;
 }
-body .login #userRegistro {
-  margin-left: 23px;
-}
-body .login #emailRegistro {
+body .login #submitLogin {
+  width: 70%;
+  border: solid 2px rgba(39, 38, 38, 0.6);
+  border-radius: 5px;
   margin-left: 35px;
 }
-body .login #userLogin {
-  margin-left: 23px;
-  margin-top: 15px;
-}
-body .login #submitLogin {
-  margin-left: 90px;
-}
 body .login #submitRegistro {
-  margin-left: 90px;
+  width: 70%;
+  border: solid 2px rgba(39, 38, 38, 0.6);
+  border-radius: 5px;
+  margin-left: 35px;
 }
 
 .estructura {
@@ -325,17 +323,15 @@ body .login #submitRegistro {
   body .login #emailRegistro {
     margin-left: 0px;
   }
-  body .login #userLogin {
+  body .login #emailLogin {
     margin-left: 0px;
     margin-top: 0px;
   }
   body .login #submitLogin {
-    margin-left: 35px;
-    width: 100px;
+    margin-left: 25px;
   }
   body .login #submitRegistro {
-    margin-left: 35px;
-    width: 100px;
+    margin-left: 25px;
   }
 }
 @media (max-width: 380px) {
