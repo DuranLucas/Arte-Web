@@ -1,9 +1,7 @@
 body {
   background: url(../img/fondo4.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body a {
   text-decoration: none;
@@ -26,7 +24,7 @@ body .fondofooter .footerfb:hover {
 body footer {
   border-top: 2px solid rgb(80, 79, 79);
   border-bottom: 2px solid rgb(80, 79, 79);
-  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 body .header {
   background-color: #20bbb3;
@@ -43,14 +41,12 @@ body .mainindex {
 body .mainindex .contenedor1 {
   width: 60%;
   margin-bottom: 0px;
-  font-family: cursive;
 }
 body .mainindex .contenedor2 {
   width: 79%;
   margin-bottom: 0px;
 }
 body .mainindex .contenedor2 .contindex2 span {
-  font-family: cursive;
   margin-bottom: 15px;
 }
 body .mainindex .contenedor2 .contindex2 span:hover {
@@ -64,9 +60,6 @@ body .mainindex .contenedor3 p {
   justify-content: center;
   padding: 5px;
   margin-top: 10px;
-}
-body .mainindex .contenedor4 .parrafos {
-  font-size: 1.1rem;
 }
 body header {
   background-color: rgba(0, 0, 0, 0.1);
@@ -131,7 +124,7 @@ body h3 {
 }
 .estructura .h2prod {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .estructura .h3index {
   display: flex;
@@ -140,7 +133,7 @@ body h3 {
   font-size: 1.4rem;
 }
 .estructura .templodelarte h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: cursive;
   text-align: center;
   justify-content: center;
@@ -161,8 +154,10 @@ body h3 {
   margin: 10px 10px;
 }
 .estructura h5 {
-  font-size: 1.4rem;
-  font-family: cursive;
+  font-size: 1.1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(252, 252, 252, 0.5);
 }
 
 .contindex {
@@ -170,7 +165,7 @@ body h3 {
   justify-content: center;
 }
 .contindex .h3inicio {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   opacity: 0.7;
   border-bottom: 3px solid rgba(75, 73, 73, 0.6);
   border-radius: 5%;
@@ -276,7 +271,7 @@ body h3 {
     font-size: 1.3rem;
   }
   .contindex .h3inicio {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 380px) {
