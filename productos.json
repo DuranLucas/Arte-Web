@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "nombre": "Bandeja Home",
+        "img": "../img/bandeja1.jpg",
+        "precio": 5500
+    },
+    {
+        "id": 2,
+        "nombre": "Bandeja Love",
+        "img": "../img/bandeja2.jpg",
+        "precio": 6500
+    },
+    {
+        "id": 3,
+        "nombre": "Bandeja Light",
+        "img": "../img/bandeja3.jpg",
+        "precio": 5300
+    },
+    {
+        "id": 4,
+        "nombre": "Bandeja Cookie",
+        "img": "../img/bandeja4.jpg",
+        "precio": 5800
+    },
+    {
+        "id": 5,
+        "nombre": "Bandeja Art",
+        "img": "../img/bandeja5.jpg",
+        "precio": 5200
+    },
+    {
+        "id": 6,
+        "nombre": "Bandeja Design",
+        "img": "../img/bandeja6.jpg",
+        "precio": 5600
+    },
+    {
+        "id": 7,
+        "nombre": "Caja Pink",
+        "img": "../img/caja1.jpg",
+        "precio": 4300
+    },
+    {
+        "id": 8,
+        "nombre": "Caja Sugar",
+        "img": "../img/caja2.jpg",
+        "precio": 4100
+    },
+    {
+        "id": 9,
+        "nombre": "Caja Dorada",
+        "img": "../img/caja3.jpg",
+        "precio": 4400
+    },
+    {
+        "id": 10,
+        "nombre": "Caja Ave",
+        "img": "../img/caja4.jpg",
+        "precio": 4800
+    },
+    {
+        "id": 11,
+        "nombre": "Caja Sol",
+        "img": "../img/caja5.jpg",
+        "precio": 4200
+    },
+    {
+        "id": 12,
+        "nombre": "Caja Graffity",
+        "img": "../img/caja6.jpg",
+        "precio": 4600
+    },
+    {
+        "id": 13,
+        "nombre": "Mueble Floral",
+        "img": "../img/mueble1.jpg",
+        "precio": 14800
+    },
+    {
+        "id": 14,
+        "nombre": "Mueble White",
+        "img": "../img/mueble2.jpg",
+        "precio": 12500
+    },
+    {
+        "id": 15,
+        "nombre": "Mueble Kubik",
+        "img": "../img/mueble3.jpg",
+        "precio": 15300
+    },
+    {
+        "id": 16,
+        "nombre": "Mueble Totem",
+        "img": "../img/mueble4.jpg",
+        "precio": 13800
+    },
+    {
+        "id": 17,
+        "nombre": "Mueble Old",
+        "img": "../img/mueble5.jpg",
+        "precio": 14200
+    },
+    {
+        "id": 18,
+        "nombre": "Mueble Cajonera",
+        "img": "../img/mueble6.jpg",
+        "precio": 15600
+    }
+]
