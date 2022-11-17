@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilos.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 <body>
@@ -84,8 +85,12 @@
     </header>
     <main>
         <div class="contenedor-carrito">
-          <i class='bx bx-cart' id="cart-icon"></i>
+          
+          
+          <i class='bx bx-cart' id="cart-icon"><div id="cart-logo-quantity" class="cart-logo-quantity">0</div></i>
+          
           <div class="cart">
+            <div class="cart-logo-quantity2" id="cart-logo-quantity2">0</div>
             <h2 class="cart-tittle">Carro de Compras</h2>
             <div class="cart-content">
               <!-- <div class="cart-box">
@@ -329,5 +334,7 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/productos.js"></script>
     <script src="../js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.8/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
