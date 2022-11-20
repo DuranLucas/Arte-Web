@@ -37,6 +37,8 @@ function ready(){
         let input = quantityInputs[i];
         input.addEventListener('change', quantityChanged);
     }
+
+    
     
     /*
     // Agregar al cart
@@ -199,7 +201,11 @@ function addProductToCart(title, price, imgProducto){
                 <div class="detail-box">
                   <div class="cart-product-title">${title}</div>
                   <div class="cart-price">${price}</div>
-                  <input type="number" value="1" class="cart-quantity" min="1" max="20">
+                  <div id="minusPlus">
+                    <i class='bx bx-plus-circle'></i>
+                    <input type="number" value="1" class="cart-quantity" min="1" max="20">
+                    <i class='bx bx-minus-circle' ></i>
+                  </div>
                 </div>
                 <i class='bx bx-trash cart-remove'></i>`
 
@@ -208,7 +214,63 @@ function addProductToCart(title, price, imgProducto){
     cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
     cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
 
+/* 
+    let quantityInput = cartShopBox.getElementsByClassName('cart-quantity')[0]
+    let plus = document.querySelector('.bx-plus-circle');
+    let minus = document.querySelector('.bx-minus-circle');
+    plus.addEventListener('click', quantityPlus);
+
+ */
+    let plus = document.querySelectorAll('.bx-plus-circle');
+    let minus = document.querySelectorAll('.bx-minus-circle');
+    for (let i=0; i < plus.length; i++){
+        let btnPlus = plus[i];
+        btnPlus.addEventListener('click', quantityPlus);
+    }
+    for (let i=0; i < minus.length; i++){
+        let btnMinus = minus[i];
+        btnMinus.addEventListener('click', quantityMinus);
+    }
 }
+
+function quantityPlus(e){
+
+    quantityInp = e.target.parentElement.childNodes[3].value;
+    if(quantityInp >= 20) {Toastify({
+        text: `No puedes comprar mas de 20 productos iguales`,
+        duration: 2000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: false, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(255, 232, 23, 0.8), rgb(252, 151, 19))",
+        },
+      }).showToast();
+    return;}
+    else {
+    reQuantityInp = parseInt(quantityInp) + 1;
+    e.target.parentElement.childNodes[3].value = `${reQuantityInp}`;
+    updateTotal();
+    }
+}
+function quantityMinus(e){
+    quantityInp = e.target.parentElement.childNodes[3].value;
+    if(quantityInp == 1) return;
+    else {
+    reQuantityInp = parseInt(quantityInp) - 1;
+    e.target.parentElement.childNodes[3].value = `${reQuantityInp}`;
+    updateTotal();
+    }
+}
+/* 
+function quantityPlus(e){
+    inputQuantity = document.getElementsByClassName('cart-quantity');
+    quantityInp = e.target.parentElement.childNodes[3].value;
+    reQuantityInp = parseInt(quantityInp) + 1;
+    e.target.parentElement.childNodes[3].value.replace(reQuantityInp++);
+    console.log(quantityInp)
+} */
 
 // Remover items del cart
 function removeCartItem(e){

@@ -58,7 +58,7 @@ body .cart-tittle {
 }
 body .cart-box {
   display: grid;
-  grid-template-columns: 32% 50% 18%;
+  grid-template-columns: 32% 40% 18%;
   align-items: center;
   gap: 1rem;
   margin-top: 0.5rem;
@@ -71,10 +71,10 @@ body .cart-img {
 }
 body .detail-box {
   display: grid;
-  row-gap: 0.5rem;
+  row-gap: 0.1rem;
 }
 body .cart-product-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
 }
 body .cart-price {
@@ -90,8 +90,11 @@ body .cart-quantity {
 }
 body .cart-remove {
   font-size: 24px;
-  color: red;
+  color: rgba(255, 0, 0, 0.8);
   cursor: pointer;
+}
+body .cart-remove:hover {
+  color: #ff0000;
 }
 body .total {
   display: flex;
@@ -110,15 +113,16 @@ body .btn-buy {
   display: flex;
   margin: 1.5rem auto 0 auto;
   padding: 12px 20px;
-  border: none;
+  border: solid 3px rgb(0, 177, 9);
+  border-radius: 3px;
   color: black;
-  background: rgb(49, 207, 255);
+  background: rgba(93, 230, 59, 0.8);
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
 }
 body .btn-buy:hover {
-  background: rgb(23, 97, 146);
+  background: rgb(51, 255, 0);
 }
 body #close-cart {
   position: absolute;
@@ -264,10 +268,12 @@ body .login #submitRegistro {
   border-radius: 10px;
   overflow: hidden;
   align-items: center;
+  opacity: 0.95;
 }
 .card:hover {
   border: solid 2px rgb(18, 125, 158);
   transition: 0.1s;
+  opacity: 1;
 }
 
 .img-card {
@@ -293,6 +299,31 @@ body .login #submitRegistro {
 .btn-card:hover {
   background-color: rgb(29, 197, 248);
   opacity: 0.8;
+}
+
+.bx-plus-circle {
+  color: green;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+}
+.bx-plus-circle:hover {
+  transition: 0.1s;
+  color: #3ce413;
+}
+
+.bx-minus-circle {
+  color: rgba(226, 4, 4, 0.8);
+  margin: 0 0 0 6px;
+  cursor: pointer;
+}
+.bx-minus-circle:hover {
+  transition: 0.1s;
+  color: #ff0000;
+}
+
+#minusPlus {
+  display: flex;
+  align-items: center;
 }
 
 .estructura {
