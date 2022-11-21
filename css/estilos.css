@@ -162,14 +162,21 @@ body .fondofooter .footerfb:hover {
 body footer {
   border-top: 2px solid rgb(80, 79, 79);
   border-bottom: 2px solid rgb(80, 79, 79);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Kalam", cursive;
 }
 body .header {
   background-color: #20bbb3;
-  font-family: cursive;
+  font-family: "Kalam", cursive;
 }
 body .header h1 {
   font-size: 3rem;
+  margin-top: 15px;
+}
+body .prodTit {
+  font-family: "Kalam", cursive;
+}
+body .contactTit {
+  font-family: "Kalam", cursive;
 }
 body .mainindex {
   display: flex;
@@ -339,10 +346,9 @@ body .login #submitRegistro {
   font-size: 2rem;
   margin-bottom: 20px;
   text-decoration: underline;
-  font-family: cursive;
 }
 .estructura .titulosprod2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Rubik Distressed", cursive;
 }
 .estructura .carrete {
   width: 400px;
@@ -386,7 +392,6 @@ body .login #submitRegistro {
 }
 .estructura .templodelarte h3 {
   font-size: 1.6rem;
-  font-family: cursive;
   text-align: center;
   justify-content: center;
   border-bottom: 2px solid rgb(133, 128, 128);
@@ -440,6 +445,7 @@ body .login #submitRegistro {
   padding: 5px;
   font-size: 1.5rem;
   color: rgb(75, 73, 73);
+  font-family: "Rubik Distressed", cursive;
 }
 .contindex2 .h4inicio {
   font-size: 1.4rem;
@@ -480,9 +486,12 @@ body .login #submitRegistro {
     margin: 20px 20px;
   }
   body .header h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
   .cajaspc {
+    display: none;
+  }
+  .about {
     display: none;
   }
 }
@@ -514,7 +523,7 @@ body .login #submitRegistro {
     font-size: 0.9rem;
   }
   body .header h1 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
   body .header a {
     margin-top: 10px;
@@ -568,7 +577,7 @@ body .login #submitRegistro {
     justify-content: space-between;
   }
   body .header h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   body .header a {
     margin: 10px 2px;

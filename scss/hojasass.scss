@@ -162,14 +162,23 @@ body {
     footer{
             border-top: 2px solid rgb(80, 79, 79);
             border-bottom: 2px solid rgb(80, 79, 79);
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Kalam', cursive;
     }
     .header{
         background-color: #20bbb3;
-        font-family:cursive;
+        font-family: 'Kalam', cursive;
+        
         h1{
             font-size: 3rem;
+            margin-top: 15px;
         }
+        
+    }
+    .prodTit{
+        font-family: 'Kalam', cursive;
+    }
+    .contactTit{
+        font-family: 'Kalam', cursive;
     }
     .mainindex{
         display: flex;
@@ -342,10 +351,9 @@ body {
         font-size: 2rem;
         margin-bottom: 20px;
         text-decoration:underline;
-        font-family:cursive;
     }
     .titulosprod2{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Rubik Distressed', cursive;
     }
     .carrete{
         width: 400px;
@@ -390,7 +398,6 @@ body {
     }
     .templodelarte h3{
         font-size: 1.6rem;
-        font-family: cursive;
         text-align: center;
         justify-content: center;
         border-bottom: 2px solid rgb(133, 128, 128);
@@ -445,6 +452,7 @@ body {
         padding: 5px;
         font-size: 1.5rem;
         color: rgb(75, 73, 73);
+        font-family: 'Rubik Distressed', cursive;
     }
     .h4inicio{
         font-size: 1.4rem;
@@ -485,9 +493,12 @@ body {
         margin: 20px 20px;
     }
     body .header h1{
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
     .cajaspc{
+        display: none;
+    }
+    .about{
         display: none;
     }
 }
@@ -520,7 +531,7 @@ body {
         font-size: 0.9rem;
     }
     body .header h1{
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
     body .header a{
         margin-top: 10px;
@@ -578,7 +589,7 @@ body {
         padding: 4px 4px;
         justify-content: space-between;}
     body .header h1{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     body .header a{
         margin:10px 2px;
