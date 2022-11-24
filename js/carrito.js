@@ -4,7 +4,7 @@ let cart = document.querySelector('.cart');
 let closeCart = document.querySelector('#close-cart');
 let cartContent = document.getElementsByClassName('cart-content')[0];
 let carrito = [];
-let arrayCarrito = [];
+let arrayCarrito = JSON.parse(localStorage.getItem("data")) || [];
 
 
 ///// Eventos
@@ -62,8 +62,46 @@ function ready(){
     var shopProducts = boton.parentNode
     var title = shopProducts.getElementsByClassName("titulo-card")[0].innerText;
 }   */
-    
+let plus = document.querySelectorAll('.bx-plus-circle');
+    let minus = document.querySelectorAll('.bx-minus-circle');
+    for (let i=0; i < plus.length; i++){
+        let btnPlus = plus[i];
+        btnPlus.addEventListener('click', quantityPlus);
+    }
+    for (let i=0; i < minus.length; i++){
+        let btnMinus = minus[i];
+        btnMinus.addEventListener('click', quantityMinus);
+    }
+
 }
+function loadLS () {
+    arrayCarrito.forEach(prod => {
+        var cartShopBox = document.createElement('div');
+    cartShopBox.classList.add('cart-box')
+    var cartItems = document.getElementsByClassName('cart-content')[0];
+    var cartBoxContent = `
+                <img src="${prod.img}" alt="" class="cart-img">
+                <div class="detail-box">
+                  <div class="cart-product-title">${prod.titulo}</div>
+                  <div class="cart-price">${prod.precio}</div>
+                  <div id="minusPlus">
+                    <i class='bx bx-plus-circle'></i>
+                    <input id=${prod.id} type="number" value="${prod.cantidad}" class="cart-quantity" min="1" max="20">
+                    <i class='bx bx-minus-circle' ></i>
+                  </div>
+                </div>
+                <i class='bx bx-trash cart-remove'></i>`
+
+    cartShopBox.innerHTML = cartBoxContent;
+    cartItems.append(cartShopBox);
+    cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
+    cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
+    updateTotal()
+    
+    });
+}
+    
+loadLS ();
 
 
 divBandejas.addEventListener("click", e => {
@@ -104,19 +142,24 @@ const addCartClicked = objeto => {
     }
     */
 
-    addProductToCart(producto.titulo, producto.precio, producto.img);
+    addProductToCart(producto.titulo, producto.precio, producto.img, producto.id);
     updateTotal();
-    if(carrito.hasOwnProperty(producto.id)){
+
+  /*   if(carrito.hasOwnProperty(producto.id)){
         return;
     }
-    carrito.push(producto);
-    console.log(carrito);
+    else {carrito.push(producto)};
+    console.log(carrito); */
+
+    addProductToArray(producto);
 
 }
+
+
 document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
 
 function buyButtonClicked (){
-    if(cartContent.hasChildNodes() == false){
+    if(localStorage.getItem("data") == "[]"){
         Swal.fire({
             toast: true,
              position: 'top-end',
@@ -137,11 +180,13 @@ function buyButtonClicked (){
              confirmButtonText: 'Entendido'
         })
         cartContent.innerHTML=``;
+        arrayCarrito = [];
+        localStorage.clear("data")
         //return;
     }
     updateTotal();
 }
-cartContent.innerHTML=``
+/* cartContent.innerHTML= localStorage.getItem("data") || `` */
 
 //// Boton de compra
 // class ProdCarrito{
@@ -153,7 +198,18 @@ cartContent.innerHTML=``
 //     }
 // }
 
-function addProductToCart(title, price, imgProducto){
+function addProductToArray(producto){   
+        if(arrayCarrito.some((prod)=>prod.titulo === producto.titulo)){
+            return
+        }
+        else { 
+            arrayCarrito.push(producto);
+            console.log(arrayCarrito)
+        };
+        localStorage.setItem("data", JSON.stringify(arrayCarrito));
+}
+
+function addProductToCart(title, price, imgProducto, id){
     var cartShopBox = document.createElement('div');
     cartShopBox.classList.add('cart-box')
     var cartItems = document.getElementsByClassName('cart-content')[0];
@@ -163,7 +219,7 @@ function addProductToCart(title, price, imgProducto){
     // carrito.push(ProductoCarrito);
     // console.log(carrito);
     
-
+    
 
     for (let i=0; i < cartItemsNames.length; i++){
         if (cartItemsNames[i].innerText == title) {
@@ -203,7 +259,7 @@ function addProductToCart(title, price, imgProducto){
                   <div class="cart-price">${price}</div>
                   <div id="minusPlus">
                     <i class='bx bx-plus-circle'></i>
-                    <input type="number" value="1" class="cart-quantity" min="1" max="20">
+                    <input id=${id} type="number" value="1" class="cart-quantity" min="1" max="20">
                     <i class='bx bx-minus-circle' ></i>
                   </div>
                 </div>
@@ -251,7 +307,13 @@ function quantityPlus(e){
     else {
     reQuantityInp = parseInt(quantityInp) + 1;
     e.target.parentElement.childNodes[3].value = `${reQuantityInp}`;
+
     updateTotal();
+    
+    let search = arrayCarrito.find ((x)=> x.id === e.target.nextElementSibling.id)
+    search.cantidad = reQuantityInp
+    console.log(arrayCarrito)
+    localStorage.setItem("data", JSON.stringify(arrayCarrito))
     }
 }
 function quantityMinus(e){
@@ -260,9 +322,17 @@ function quantityMinus(e){
     else {
     reQuantityInp = parseInt(quantityInp) - 1;
     e.target.parentElement.childNodes[3].value = `${reQuantityInp}`;
+
     updateTotal();
+
+    let search = arrayCarrito.find ((x)=> x.id === e.target.previousElementSibling.id)
+    search.cantidad = reQuantityInp
+    console.log(arrayCarrito)
+    localStorage.setItem("data", JSON.stringify(arrayCarrito))
     }
 }
+
+
 /* 
 function quantityPlus(e){
     inputQuantity = document.getElementsByClassName('cart-quantity');
@@ -275,8 +345,18 @@ function quantityPlus(e){
 // Remover items del cart
 function removeCartItem(e){
     let buttonClicked = e.target;
+
+    
+    let search = arrayCarrito.find ((x)=> x.titulo === e.target.parentElement.children[1].children[0].innerHTML)
+    let index = arrayCarrito.indexOf(search)
+    arrayCarrito.splice(index,1)
+    console.log(arrayCarrito);
+    
+
+
     buttonClicked.parentElement.remove();
     updateTotal();
+    localStorage.setItem("data", JSON.stringify(arrayCarrito))
 }
 
 // Cambio en la quantity
