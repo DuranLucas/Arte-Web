@@ -18,7 +18,7 @@ body {
         }
     }
     .cart{
-        position: fixed;
+        position: absolute;
         top: 0;
         right: -100%;
         width: 300px;
@@ -48,6 +48,8 @@ body {
     }
     .cart.active{
         right: 0;
+        overflow-y: scroll;
+        height: 100vh;
     }
     .cart-tittle{
         text-align: center;

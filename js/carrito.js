@@ -86,7 +86,7 @@ function loadLS () {
                   <div class="cart-price">${prod.precio}</div>
                   <div id="minusPlus">
                     <i class='bx bx-plus-circle'></i>
-                    <input id=${prod.id} type="number" value="${prod.cantidad}" class="cart-quantity" min="1" max="20">
+                    <input id=${prod.id} type="number" value="${prod.cantidad}" class="cart-quantity" min="1" max="20" readonly>
                     <i class='bx bx-minus-circle' ></i>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const addCartClicked = objeto => {
 document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
 
 function buyButtonClicked (){
-    if(localStorage.getItem("data") == "[]"){
+    if(localStorage.getItem("data") == "[]" || localStorage.getItem("data") == undefined || cartContent.hasChildNodes() == false ){
         Swal.fire({
             toast: true,
              position: 'top-end',
@@ -182,7 +182,6 @@ function buyButtonClicked (){
         cartContent.innerHTML=``;
         arrayCarrito = [];
         localStorage.clear("data")
-        //return;
     }
     updateTotal();
 }
@@ -259,7 +258,7 @@ function addProductToCart(title, price, imgProducto, id){
                   <div class="cart-price">${price}</div>
                   <div id="minusPlus">
                     <i class='bx bx-plus-circle'></i>
-                    <input id=${id} type="number" value="1" class="cart-quantity" min="1" max="20">
+                    <input id=${id} type="number" value="1" class="cart-quantity" min="1" max="20" readonly>
                     <i class='bx bx-minus-circle' ></i>
                   </div>
                 </div>

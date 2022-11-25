@@ -19,7 +19,7 @@ body .bx-cart:hover {
   border: solid 3px rgb(68, 59, 59);
 }
 body .cart {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: -100%;
   width: 300px;
@@ -49,6 +49,8 @@ body .cart-logo-quantity2 {
 }
 body .cart.active {
   right: 0;
+  overflow-y: scroll;
+  height: 100vh;
 }
 body .cart-tittle {
   text-align: center;
