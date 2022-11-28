@@ -1,7 +1,7 @@
 ///// FORMULARIO DE INGRESO Y REGISTRO
 ////////// Variables //////////
 
-const formRegistro = document.querySelector("#formRegistro");
+/* const formRegistro = document.querySelector("#formRegistro");
 const userRegistro = document.querySelector("#userRegistro");
 const emailRegistro = document.querySelector("#emailRegistro");
 const pwRegistro = document.querySelector("#pwRegistro");
@@ -47,6 +47,8 @@ formLogin.addEventListener("submit", (e) => {
             error.innerHTML = "<p>Datos incorrectos, intente nuevamente.</p>"
         }
     }
-})
+}) */
+
+
 ////////// Funciones //////////
 
