@@ -64,6 +64,7 @@ body .cart-box {
   align-items: center;
   gap: 1rem;
   margin-top: 0.5rem;
+  margin-bottom: 15px;
 }
 body .cart-img {
   width: 100px;
@@ -133,6 +134,11 @@ body #close-cart {
   font-size: 2rem;
   color: black;
   cursor: pointer;
+}
+body #close-cart:hover {
+  font-weight: 700;
+  transform: rotate(90deg);
+  transition: 0.3s ease;
 }
 body .contenedor-carrito {
   display: flex;
@@ -264,11 +270,6 @@ body .login #submitRegistro {
 #new .one {
   contain: content;
 }
-#new .one a {
-  text-decoration: none;
-  font-style: none;
-  font-size: 90px;
-}
 #new .one .details {
   position: absolute;
   width: 100%;
@@ -282,8 +283,10 @@ body .login #submitRegistro {
   background-color: rgba(32, 238, 228, 0.5);
 }
 #new .one .details h2 {
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 24px;
   color: #2a2a2a;
+  margin: 5px;
 }
 #new .one .details button {
   display: inline-block;
@@ -295,7 +298,8 @@ body .login #submitRegistro {
   text-transform: uppercase;
   border-bottom: 1px solid #2a2a2a;
   padding: 3px;
-  margin-bottom: 60px;
+  margin: 3px;
+  margin-bottom: 80px;
   transform: translateY(70px);
   transition: 0.3s ease;
 }
@@ -329,7 +333,13 @@ body .login #submitRegistro {
   text-align: center;
 }
 #new .one:nth-child(2) .details h2 {
-  color: #141414;
+  color: #ffffff;
+}
+#new .one:nth-child(2) .details button {
+  color: #ffffff;
+}
+#new .one:nth-child(2) .details button:hover {
+  color: #3a3a3a;
 }
 
 #new .one:nth-child(3) .details {

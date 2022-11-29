@@ -63,6 +63,7 @@ body {
         align-items: center;
         gap: 1rem;
         margin-top: 0.5rem;
+        margin-bottom: 15px;
     }
     .cart-img{
         width: 100px;
@@ -133,6 +134,11 @@ body {
         font-size: 2rem;
         color: black;
         cursor: pointer;
+        &:hover{
+            font-weight: 700;
+            transform: rotate(90deg);
+            transition: 0.3s ease;
+        }
     }
     .contenedor-carrito{
         display: flex;
@@ -267,11 +273,6 @@ body {
     border-bottom: 3px solid #20bbb3;
     .one{
         contain:content;
-        a{
-            text-decoration: none;
-            font-style: none;
-            font-size: 90px;
-        }
         .details{
             position:absolute;
             width: 100%;
@@ -284,8 +285,10 @@ body {
                 background-color: rgb(32, 238, 228, 0.5);
             }
             h2{
-                font-weight: 800;
+                font-weight: 600;
+                font-size: 24px;
                 color: #2a2a2a;
+                margin: 5px;
             }
             button{
                 display: inline-block;
@@ -297,7 +300,8 @@ body {
                 text-transform: uppercase;
                 border-bottom: 1px solid #2a2a2a;
                 padding: 3px;
-                margin-bottom: 60px;
+                margin: 3px;
+                margin-bottom: 80px;
                 transform: translateY(70px);
                 transition: 0.3s ease;
                 &:hover{
@@ -334,7 +338,13 @@ body {
     align-items: center;
     text-align: center;
     h2{
-        color: #141414;
+        color: #ffffff;
+    }
+    button{
+        color: #ffffff;
+        &:hover{
+            color:#3a3a3a
+        }
     }
 }
 #new .one:nth-child(3) .details{
