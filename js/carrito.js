@@ -1,9 +1,207 @@
+//// Variables
+divBandejas = document.querySelector (".divBandejas");
+divCajas = document.querySelector (".divCajas");
+divMuebles = document.querySelector (".divMuebles");
+let previewContainer = document.querySelector (".products-preview");
+
+///// Funciones
+
+const fetchData = async () => {
+    try{
+        const res = await fetch('../productos.json');
+        const data = await res.json();
+        mostrarBandejasF (data);
+        mostrarCajasF(data);
+        mostrarMueblesF(data);
+
+
+        crearPopUp(data);
+
+        
+    } catch (error){
+        console.log(error)
+    }
+}
+
+function mostrarBandejasF(data) {
+    data.forEach((bandeja)=>{
+        
+        if(bandeja.id <= 6){
+        const cardBandeja = document.createElement ("div");
+        cardBandeja.className = ("card");
+        cardBandeja.dataset.id = bandeja.id;
+
+        const imgBandeja = document.createElement ("img");
+        imgBandeja.src = bandeja.img;
+        imgBandeja.className = ("img-card");
+
+        const tituloBandeja = document.createElement ("h4");
+        tituloBandeja.textContent = bandeja.nombre;
+        tituloBandeja.className = ("titulo-card");
+
+        const precioBandeja = document.createElement ("p");
+        precioBandeja.textContent = "$"+bandeja.precio;
+
+        const btnBandeja = document.createElement ("button");
+        btnBandeja.className = ("btn-card buttons");
+        btnBandeja.textContent = "Agregar al Carrito";
+        btnBandeja.dataset.id = bandeja.id;
+
+        cardBandeja.appendChild(imgBandeja);
+        cardBandeja.appendChild(tituloBandeja);
+        cardBandeja.appendChild(precioBandeja);
+        cardBandeja.appendChild(btnBandeja);
+        
+        divBandejas.appendChild(cardBandeja);}
+    })
+}
+
+function mostrarCajasF(data) {
+    data.forEach((caja)=>{
+        if(caja.id > 6 && caja.id <= 12){
+        const cardCaja = document.createElement ("div");
+        cardCaja.className = ("card");
+        cardCaja.dataset.id = caja.id;
+
+        const imgCaja = document.createElement ("img");
+        imgCaja.src = caja.img;
+        imgCaja.className = ("img-card");
+
+        const tituloCaja = document.createElement ("h4");
+        tituloCaja.textContent = caja.nombre;
+        tituloCaja.className = ("titulo-card");
+
+        const precioCaja = document.createElement ("p");
+        precioCaja.textContent = "$"+caja.precio;
+
+        const btnCaja = document.createElement ("button");
+        btnCaja.className = ("btn-card buttons");
+        btnCaja.textContent = "Agregar al Carrito";
+        btnCaja.dataset.id = caja.id;
+
+        cardCaja.appendChild(imgCaja);
+        cardCaja.appendChild(tituloCaja);
+        cardCaja.appendChild(precioCaja);
+        cardCaja.appendChild(btnCaja);
+        
+        divCajas.appendChild(cardCaja);}
+    })
+}
+
+function mostrarMueblesF(data) {
+    data.forEach((mueble)=>{
+        if(mueble.id > 12 && mueble.id <= 18){
+        const cardMueble = document.createElement ("div");
+        cardMueble.className = ("card");
+        cardMueble.dataset.id = mueble.id;
+
+        const imgMueble = document.createElement ("img");
+        imgMueble.src = mueble.img;
+        imgMueble.className = ("img-card");
+
+        const tituloMueble = document.createElement ("h4");
+        tituloMueble.textContent = mueble.nombre;
+        tituloMueble.className = ("titulo-card");
+
+        const precioMueble = document.createElement ("p");
+        precioMueble.textContent = "$"+mueble.precio;
+
+        const btnMueble = document.createElement ("button");
+        btnMueble.className = ("btn-card buttons");
+        btnMueble.textContent = "Agregar al Carrito";
+        btnMueble.dataset.id = mueble.id;
+
+        cardMueble.appendChild(imgMueble);
+        cardMueble.appendChild(tituloMueble);
+        cardMueble.appendChild(precioMueble);
+        cardMueble.appendChild(btnMueble);
+        
+        divMuebles.appendChild(cardMueble);}
+    })
+}
+
+function crearPopUp(data) {
+    data.forEach((producto)=>{
+        let PopUps = document.createElement('div')
+        PopUps.innerHTML = `<div class="preview" data-target="${producto.id}">
+        <i class='bx bx-x'></i>
+        <img src="${producto.img}" alt="">
+        <h3 class="titulo-card">${producto.nombre}</h3>
+        <div class="stars">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star-half'></i>
+          <span>( 250 )</span>
+        </div>
+        <div class='desc'>Breve descripcion del producto, como por ejemplo los materiales utilizados y las medidas del mismo.
+        </div>
+        <p class="price">$ ${producto.precio}</p>
+        <div>
+          <a id="buttons" class="buttons addCart" data-id="${producto.id}">Agregar al carrito</a>
+        </div>
+      </div>`
+    previewContainer.appendChild(PopUps);
+    })
+    console.log(previewContainer);
+
+    let previewBox = previewContainer.querySelectorAll('.preview');
+    let btncard = document.querySelectorAll('.btn-card');
+    console.log(previewBox)
+
+    document.querySelectorAll('.card').forEach(product =>{
+        product.onclick = (e) => {
+            if(e.target.className == "btn-card buttons")return;
+            previewContainer.style.display = 'flex';
+            
+            let id = product.getAttribute('data-id');
+            previewBox.forEach(preview =>{
+                let target = preview.getAttribute('data-target');
+                if(id == target){             
+                
+                    preview.classList.add('active');
+                    
+                }
+                
+            });
+            
+        };
+    });
+    previewBox.forEach(close => {
+        close.querySelector('.bx-x').onclick = () =>{
+            close.classList.remove('active');
+            previewContainer.style.display = 'none';
+        };
+    });
+
+    document.querySelectorAll('.addCart').forEach(btn =>{
+        /* console.log(btn) */
+        btn.onclick = (e) => {
+            console.log(e.target.parentElement.parentElement);
+            addCartClicked(e.target.parentElement.parentElement)
+            updateTotal()
+        }
+    })
+}  
+
+
+//// Eventos
+
+
+document.addEventListener("DOMContentLoaded", ()=>{fetchData()});
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
 ///// Variables
 let cartIcon = document.querySelector('#cart-icon');
 let cart = document.querySelector('.cart');
 let closeCart = document.querySelector('#close-cart');
 let cartContent = document.getElementsByClassName('cart-content')[0];
-let carrito = [];
 let arrayCarrito = JSON.parse(localStorage.getItem("data")) || [];
 
 
@@ -63,7 +261,7 @@ function ready(){
     var title = shopProducts.getElementsByClassName("titulo-card")[0].innerText;
 }   */
 let plus = document.querySelectorAll('.bx-plus-circle');
-    let minus = document.querySelectorAll('.bx-minus-circle');
+let minus = document.querySelectorAll('.bx-minus-circle');
     for (let i=0; i < plus.length; i++){
         let btnPlus = plus[i];
         btnPlus.addEventListener('click', quantityPlus);
@@ -80,7 +278,7 @@ function loadLS () {
     cartShopBox.classList.add('cart-box')
     var cartItems = document.getElementsByClassName('cart-content')[0];
     var cartBoxContent = `
-                <img src="${prod.img}" alt="" class="cart-img">
+                <img src="${prod.img}" alt="" class="img-card cart-img">
                 <div class="detail-box">
                   <div class="cart-product-title">${prod.titulo}</div>
                   <div class="cart-price">${prod.precio}</div>
@@ -115,22 +313,29 @@ divMuebles.addEventListener("click", e => {
 })
 
 const addCarrito = e => {
-    if(e.target.classList.contains('btn-card')){
+    if(e.target.classList.contains('btn-card') || e.target.classList.contains('buttons')){
         addCartClicked(e.target.parentElement)
+        console.log(e.target.parentElement)
     }
     e.stopPropagation();
 }   
+
+
+
+
 
 
 const addCartClicked = objeto => {
     // let idProd = objeto.id;
     let title = objeto.getElementsByClassName("titulo-card")[0].innerText;
     let price = objeto.querySelector('p').innerText;
-    let imgProducto = objeto.getElementsByClassName('img-card')[0].src;
-     
+    let imgProducto = objeto.querySelector('img').src;
+
+
+    
    
     const producto = {
-        id: objeto.querySelector('.btn-card').dataset.id,
+        id: objeto.querySelector('.buttons').dataset.id,
         titulo: title,
         precio: price,
         img: imgProducto,
