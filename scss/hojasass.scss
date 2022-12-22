@@ -191,6 +191,30 @@ body {
     .form-control{
         resize: none;
     }
+    .text-right{
+        text-align: end;
+        font-size: 1rem;
+    }
+    .btnFin{
+        display: flex;
+        justify-content: end;
+    }
+    #enviar{
+        font-size: 1.1rem;
+        border: solid 3px rgb(0, 177, 9);
+        border-radius: 3px;
+        color: black;
+        background: rgb(93, 230, 59, 0.8);
+        font-weight: 500;
+        cursor: pointer;
+        &:hover{
+            background: rgb(51, 255, 0);
+        }
+    }
+    .estructuraCompra{
+        padding: 1rem;
+    }
+    
     .mainindex{
         display: flex;
         flex-flow: row wrap;
@@ -791,6 +815,51 @@ body {
     #new .one .details .h2contact{
         font-size: 24px;
     }
+    .tableHead{
+        font-size: 0.7rem;
+    }
+    .cSubTotal{
+        font-size: 0.8rem;
+    }
+    .cPrecio{
+        font-size: 0.8rem;
+    }
+    .cTitulo{
+        font-size: 0.8rem;
+    }
+    .cCantidad{
+        font-size: 0.8rem;
+    }
+    #img-compra{
+        width: 90px;
+    }
+}
+@media (max-width:410px){
+    .tableHead{
+        font-size: 0.6rem;
+    }
+    .cSubTotal{
+        font-size: 0.6rem;
+    }
+    .cPrecio{
+        font-size: 0.6rem;
+    }
+    .cTitulo{
+        font-size: 0.6rem;
+    }
+    .cCantidad{
+        font-size: 0.6rem;
+    }
+    #img-compra{
+        width: 80px;
+        padding: 5px;
+    }
+    #cTotal{
+        font-size: 0.8rem;
+    }
+    tbody th p{
+        font-size: 0.8rem;
+    }
 }
 @media (max-width:380px){
     .header .nav-link{
@@ -808,4 +877,7 @@ body {
     .estructura .carrete .img-catalogo{
         height: 250px;
     }
+    
+    
+    
 }

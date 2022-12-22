@@ -1,10 +1,44 @@
-//// Variables
-divBandejas = document.querySelector(".divBandejas");
-divCajas = document.querySelector(".divCajas");
-divMuebles = document.querySelector(".divMuebles");
+/arraycarrit/// Variables
+const divBandejas = document.querySelector(".divBandejas");
+const divCajas = document.querySelector(".divCajas");
+const divMuebles = document.querySelector(".divMuebles");
 let previewContainer = document.querySelector(".products-preview");
 
+let cartIcon = document.querySelector('#cart-icon');
+let cart = document.querySelector('.cart');
+let closeCart = document.querySelector('#close-cart');
+let cartContent = document.getElementsByClassName('cart-content')[0];
+let arrayCarrito = JSON.parse(localStorage.getItem("data")) || [];
+
+
 ///// Funciones
+/* function loadLS2() {
+    arrayCarrito.forEach(prod => {
+        let row = document.createElement('tr');
+        contCompra = document.querySelector('#lista-compra tbody');
+        let item = `
+                <img src="${prod.img}" alt="" class="img-card cart-img">
+                <div class="detail-box">
+                  <div class="cart-product-title">${prod.titulo}</div>
+                  <div class="cart-price">${prod.precio}</div>
+                  <div id="minusPlus">
+                    <i class='bx bx-plus-circle'></i>
+                    <input id=${prod.id} type="number" value="${prod.cantidad}" class="cart-quantity" min="1" max="20" readonly>
+                    <i class='bx bx-minus-circle' ></i>
+                  </div>
+                </div>`
+
+        row.innerHTML = item;
+        console.log(contCompra);
+        contCompra.appendChild(row);
+        console.log(contCompra);
+    });
+} */
+
+
+/* let contenedorCompras = document.querySelector('#contenedorCompras');
+contenedorCompras.innerHTML = `<div>holaa</div>`
+console.log(contenedorCompras); */
 
 const fetchData = async () => {
     try {
@@ -13,6 +47,7 @@ const fetchData = async () => {
         mostrarBandejasF(data);
         mostrarCajasF(data);
         mostrarMueblesF(data);
+
 
 
         crearPopUp(data);
@@ -140,7 +175,7 @@ function crearPopUp(data) {
         </div>
         <div class='desc'>Breve descripcion del producto, como por ejemplo los materiales utilizados y las medidas del mismo.
         </div>
-        <p class="price">$ ${producto.precio}</p>
+        <p class="price">$${producto.precio}</p>
         <div>
           <a id="buttons" class="buttons addCart" data-id="${producto.id}">Agregar al carrito</a>
         </div>
@@ -220,11 +255,7 @@ document.addEventListener("DOMContentLoaded", () => { fetchData() });
 
 
 ///// Variables
-let cartIcon = document.querySelector('#cart-icon');
-let cart = document.querySelector('.cart');
-let closeCart = document.querySelector('#close-cart');
-let cartContent = document.getElementsByClassName('cart-content')[0];
-let arrayCarrito = JSON.parse(localStorage.getItem("data")) || [];
+
 
 
 ///// Eventos
@@ -384,6 +415,9 @@ const addCartClicked = objeto => {
 
 
 document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
+/* const contenedorCompras = document.querySelector('form');
+console.log(contenedorCompras); */
+
 
 function buyButtonClicked() {
     if (localStorage.getItem("data") == "[]" || localStorage.getItem("data") == undefined || cartContent.hasChildNodes() == false) {
@@ -397,21 +431,39 @@ function buyButtonClicked() {
         })
     }
     else {
+            /* arrayCarrito.forEach(prod=>{
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td>
+                <img src="${prod.img}" width=100>
+                </td>
+                `;
+                contenedorCompras.appendChild(row);
+                
+            }) */
+
+        /* loadLS2(); */
+
         Swal.fire({
             toast: true,
             position: 'top-end',
-            timer: 3500,
+            timer: 3000,
             timerProgressBar: true,
             icon: 'success',
             title: 'Tu orden de compra fue exitosa',
             confirmButtonText: 'Entendido'
-        })
-        cartContent.innerHTML = ``;
-        arrayCarrito = [];
-        localStorage.clear("data")
+        }).then(() =>{
+            /* cartContent.innerHTML = ``; */
+          /* arrayCarrito = []; */
+          /* localStorage.clear("data"); */
+          setTimeout( () => { window.location.href = "compra.html"; }, 200);
+          })
+        
     }
     updateTotal();
 }
+
 /* cartContent.innerHTML= localStorage.getItem("data") || `` */
 
 //// Boton de compra
@@ -632,9 +684,21 @@ function updateTotal() {
     }
     carritoQuantity.innerHTML = `${totalQuantity}`;
     carritoQuantity2.innerHTML = `${totalQuantity}`;
-
+    /* costofinal(); */
 
     total = Math.round(total * 100) / 100;
+    /* function totalCompras (total){
+        costoFinal(total)
+    } */
+    /* function costofinal(total){
+        console.log(total);
+        document.getElementById('totalCompra').innerText.replace = ("$" + total);
+        
+    } */
+
     document.getElementsByClassName('total-price')[0].innerText = "$" + total;
 
 }
+/* function costoFinal(total){
+    console.log(total);
+} */
