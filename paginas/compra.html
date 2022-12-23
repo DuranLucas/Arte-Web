@@ -124,24 +124,24 @@
                     DESCOMENTAR PARA RECIBIR LOS EMAIL A TRAVES DE FORMSPREE -->
                     <div class="row">
                         <div class="mb-3 col-lg-6 col-sm-6">
-                            <label for="compraNombre" class="form-label">Nombre:</label>
-                            <input type="text" name="nombre" class="form-control" id="compraNombre"
-                                placeholder="Nombre/s">
+                            <label for="compraNombre" class="form-label">Nombre y Apellido:</label>
+                            <input type="name" name="nombre" class="form-control" id="compraNombre"
+                                placeholder="Nombre completo" autocomplete="name" pattern="[\p{L} \-]+">
                         </div>
                         <div class="mb-3 col-lg-6 col-sm-6">
-                            <label for="compraApellido" class="form-label">Apellido:</label>
-                            <input type="text" name="apellido" class="form-control" id="compraApellido"
-                                placeholder="Apellido/s">
+                            <label for="compraDomicilio" class="form-label">Domicilio:</label>
+                            <input type="text" name="domicilio" class="form-control" id="compraDomicilio"
+                                placeholder='Ej: Av Santa Fe 2247 3ro "F"' autocomplete="street-address">
                         </div>
                         <div class="mb-3 col-lg-6 col-sm-6">
                             <label for="compraTel" class="form-label">Telefono/WhatsApp:</label>
-                            <input type="text" name="tel" class="form-control" id="compraTel"
-                                placeholder="Ej: 11-32325454">
+                            <input type="tel" name="tel" class="form-control" id="compraTel"
+                                placeholder="Ej: 1132325454" pattern="[\d -]{8,12}" title="Ej: 1132325454" autocomplete="tel">
                         </div>
                         <div class="mb-3 col-lg-6 col-sm-6">
                             <label for="compramEmail" class="form-label">Email:</label>
                             <input type="email" name="email" class="form-control" id="compraEmail"
-                                placeholder="email@gmail.com">
+                                placeholder="Ej: email@gmail.com" autocomplete="email">
                         </div>
 
                         <table class="table" id="lista-compra">
@@ -170,7 +170,7 @@
                         </div>
 
                         <div class="form-group col-lg-12 btnFin">
-                            <input type="hidden" name="save" value="contact">
+                            <input type="hidden" name="save" value="compra">
                             <button id="enviar" type="submit" class="btn btn-default btn-fin">Finalizar compra</button>
                         </div>
                     </div>

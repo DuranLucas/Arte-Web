@@ -36,7 +36,7 @@ function loadLS2() {
 document.addEventListener("DOMContentLoaded", loadLS2);
 
 const nombre = document.getElementById('compraNombre');
-const apellido = document.getElementById('compraApellido');
+const domicilio = document.getElementById('compraDomicilio');
 const tel = document.getElementById('compraTel');
 const email = document.getElementById('compraEmail');
 
@@ -44,7 +44,7 @@ const email = document.getElementById('compraEmail');
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
   
-    if (nombre.value != '' && apellido.value != '' && email.value != '' && tel.value != '') {
+    if (nombre.value != '' && domicilio.value != '' && email.value != '' && tel.value != '') {
   
       window.onbeforeunload = () => {
         for (const form of document.getElementsByTagName('form')) {

@@ -1,12 +1,12 @@
 const nombre = document.getElementById('formNombre');
-const apellido = document.getElementById('formApellido');
+/* const apellido = document.getElementById('formApellido'); */
 const email = document.getElementById('formEmail');
 const consulta = document.getElementById('formConsulta')
 
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
 
-  if (nombre.value != '' && apellido.value != '' && email.value != '' && consulta.value != '') {
+  if (nombre.value != '' && email.value != '' && consulta.value != '') {
 
     window.onbeforeunload = () => {
       for (const form of document.getElementsByTagName('form')) {
@@ -16,7 +16,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     Swal.fire({
       toast: true,
       position: 'top-end',
-      timer: 2800,
+      timer: 3000,
       timerProgressBar: true,
       icon: 'success',
       title: 'Tu consulta fue enviada exitosamente!',
