@@ -1,13 +1,13 @@
+////// Variables
 const nombre = document.getElementById('formNombre');
 /* const apellido = document.getElementById('formApellido'); */
 const email = document.getElementById('formEmail');
 const consulta = document.getElementById('formConsulta')
 
+////// Eventos
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
-
   if (nombre.value != '' && email.value != '' && consulta.value != '') {
-
     window.onbeforeunload = () => {
       for (const form of document.getElementsByTagName('form')) {
         form.reset();
@@ -24,7 +24,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
     }).then(() => {
       setTimeout(() => { window.location.href = "../index.html"; }, 200);
     })
-
   }
 
   else {
@@ -38,5 +37,4 @@ document.querySelector('form').addEventListener('submit', (e) => {
     })
     return;
   }
-
 });

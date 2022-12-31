@@ -50,5 +50,37 @@ formLogin.addEventListener("submit", (e) => {
 }) */
 
 
-////////// Funciones //////////
+///////// En el index.html luego del header:
 
+/* <div id="registroLogin">
+      <div class="login">
+        <form action="" id="formLogin">
+          <h4>Ingreso</h4>
+          <label for="name">Email:</label>
+          <input type="email" id="emailLogin" value="">
+          <br>
+          <label for="pw">Contraseña:</label>
+          <input type="password" id="pwLogin" value="">
+          <br>
+          <input type="submit" id="submitLogin" value="Ingresar">
+        </form>
+        <div id="error"></div>
+      </div>
+
+      <div class="login">
+        <form action="" id="formRegistro">
+          <h4>Registro</h4>
+          <label for="name">Nombre:</label>
+          <input type="text" id="userRegistro" value="">
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="emailRegistro" value="">
+          <br>
+          <label for="pw">Contraseña:</label>
+          <input type="password" id="pwRegistro" value="">
+          <br>
+          <input type="submit" id="submitRegistro" value="Registrarse">
+        </form>
+        <div id="error2"></div>
+    </div>
+  </div> */

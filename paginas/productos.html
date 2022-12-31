@@ -1,104 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - A Mi Manera</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="icon" href="/img/fi.ico">
-
-
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Marhey:wght@500&display=swap" rel="stylesheet">
-
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - A Mi Manera</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="icon" href="/img/fi.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Marhey:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-      <symbol id="homee" viewBox="0 0 16 16">
-        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-      </symbol>
-      <symbol id="productoslogo" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-      </symbol>
-      <symbol id="nosotroslogo" viewBox="0 0 16 16">
-        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-      </symbol>
-      <symbol id="contactologo" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-      </symbol>
-      <symbol id="grid" viewBox="0 0 16 16">
-        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-      </symbol>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-        </symbol>
-        <symbol id="instagram" viewBox="0 0 16 16">
-            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-        </symbol>
-    </svg>
-    <header class="header">
-          <div class="text-white">
-              <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center">
-                  <a href="../index.html" class="d-flex align-items-center my-lg-0 text-white text-decoration-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z"/>
-                    </svg>
-                  </a>
-                  <h1 class="">A Mi Manera</h1>
-                  <ul class="nav col-12 col-lg-12 justify-content-center my-md-0 text-small">
-                    <li>
-                      <a href="../index.html" class="nav-link iconosnav">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#homee"/></svg>
-                        Inicio
-                      </a>
-                    </li>
-                    <li>
-                      <a href="../paginas/productos.html" class="nav-link iconosnavactivo">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#productoslogo"/></svg>
-                        Productos
-                      </a>
-                    </li>
-                    <li>
-                      <a href="../paginas/nosotros.html" class="nav-link iconosnav">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#nosotroslogo"/></svg>
-                        Nosotros
-                      </a>
-                    </li>
-                    <li>
-                      <a href="../paginas/contacto.html" class="nav-link iconosnav">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#contactologo"/></svg>
-                        Contacto
-                      </a>
-                    </li>
-                    
-                  </ul>
-                </div>
-            </div>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="homee" viewBox="0 0 16 16">
+      <path
+        d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+    </symbol>
+    <symbol id="productoslogo" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+    </symbol>
+    <symbol id="nosotroslogo" viewBox="0 0 16 16">
+      <path
+        d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+    </symbol>
+    <symbol id="contactologo" viewBox="0 0 16 16">
+      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+      <path fill-rule="evenodd"
+        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+    </symbol>
+    <symbol id="grid" viewBox="0 0 16 16">
+      <path
+        d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+    </symbol>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="facebook" viewBox="0 0 16 16">
+      <path
+        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+    </symbol>
+    <symbol id="instagram" viewBox="0 0 16 16">
+      <path
+        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+    </symbol>
+  </svg>
+  <header class="header">
+    <div class="text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+          <a href="../index.html" class="d-flex align-items-center my-lg-0 text-white text-decoration-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-hearts"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z" />
+            </svg>
+          </a>
+          <h1 class="">A Mi Manera</h1>
+          <ul class="nav col-12 col-lg-12 justify-content-center my-md-0 text-small">
+            <li>
+              <a href="../index.html" class="nav-link iconosnav">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#homee" />
+                </svg>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="../paginas/productos.html" class="nav-link iconosnavactivo">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#productoslogo" />
+                </svg>
+                Productos
+              </a>
+            </li>
+            <li>
+              <a href="../paginas/nosotros.html" class="nav-link iconosnav">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#nosotroslogo" />
+                </svg>
+                Nosotros
+              </a>
+            </li>
+            <li>
+              <a href="../paginas/contacto.html" class="nav-link iconosnav">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#contactologo" />
+                </svg>
+                Contacto
+              </a>
+            </li>
+
+          </ul>
         </div>
-        
-    </header>
-    <main>
-        <div class="contenedor-carrito">
-          
-          
-          <i class='bx bx-cart' id="cart-icon"><div id="cart-logo-quantity" class="cart-logo-quantity">0</div></i>
-          
-          <div class="cart">
-            <div class="cart-logo-quantity2" id="cart-logo-quantity2">0</div>
-            <h2 class="cart-tittle">Carro de Compras</h2>
-            <div class="cart-content">
-              <!-- <div class="cart-box">
+      </div>
+    </div>
+    <div class="burbujas">
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+    </div>
+  </header>
+  <main>
+    <div class="contenedor-carrito">
+      <i class='bx bx-cart' id="cart-icon">
+        <div id="cart-logo-quantity" class="cart-logo-quantity">0</div>
+      </i>
+      <div class="cart">
+        <div class="cart-logo-quantity2" id="cart-logo-quantity2">0</div>
+        <h2 class="cart-tittle">Carro de Compras</h2>
+        <div class="cart-content">
+          <!-- <div class="cart-box">
                 <img src="/img/bandeja2.jpg" alt="" class="cart-img">
                 <div class="detail-box">
                   <div class="cart-product-title">Bandeja Love</div>
@@ -107,241 +137,273 @@
                 </div>
                 <i class='bx bx-trash cart-remove'></i>
               </div> -->
-            </div>
-            <div class="total">
-              <div class="total-title">Total</div>
-              <div class="total-price">$0</div>
-            </div>
-            <button type="button" class="btn-buy">Comprar</button>
-            <i class='bx bx-x' id="close-cart"></i>
-          </div>
         </div>
-        <div class="estructura row divTituloProductos">
-            <div class="col-12">
-                <h2 class="titulosprod prodTit">Productos</h2>
-            </div>
-            <div class="col-12">
-                <h3 class="h2prod">Te invitamos a que revises todos nuestros productos. Si te interesa algun modelo que no este en stock actualmente podes contactarte con nosotros para recibir mas informacion al respecto. </h2>
-            </div>
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">$0</div>
         </div>
+        <button type="button" class="btn-buy">Comprar</button>
+        <i class='bx bx-x' id="close-cart"></i>
+      </div>
+    </div>
+    <div class="estructura row divTituloProductos">
+      <div class="col-12">
+        <h2 class="titulosprod prodTit">Productos</h2>
+      </div>
+      <div class="col-12">
+        <h3 class="h2prod">Te invitamos a que revises todos nuestros productos. Si te interesa algun modelo que no este
+          en stock actualmente podes contactarte con nosotros para recibir mas informacion al respecto. </h2>
+      </div>
+    </div>
 
-        <div class="estructura row">
-          <h2 class="titulosprod col-12 titulosprod2">BANDEJAS</h2>
-          <div class="carrete col-8">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <div class="estructura row">
+      <h2 class="titulosprod col-12 titulosprod2">BANDEJAS</h2>
+      <div class="carrete col-8">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+              aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
+              aria-label="Slide 6"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img src="../img/bandeja1.jpg" data-id="1" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Bandeja Home</h5>
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                  <img src="../img/bandeja1.jpg" data-id="1" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Bandeja Home</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/bandeja2.jpg" data-id="2" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Bandeja Love</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/bandeja3.jpg" data-id="3" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Bandeja Light</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/bandeja4.jpg" data-id="4" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Bandeja Cookie</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/bandeja5.jpg" data-id="5" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Bandeja Art</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/bandeja6.jpg" data-id="6" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Bandeja Design</h5>
-                  </div>
-                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/bandeja2.jpg" data-id="2" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Bandeja Love</h5>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/bandeja3.jpg" data-id="3" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Bandeja Light</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/bandeja4.jpg" data-id="4" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Bandeja Cookie</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/bandeja5.jpg" data-id="5" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Bandeja Art</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/bandeja6.jpg" data-id="6" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Bandeja Design</h5>
+              </div>
             </div>
           </div>
-          <h3 class="col-4 h2prod about">Las mejores bandejas con detalles artisticos unicos. Variedades de modelos y colores para todos los gustos.</h3>
-          <div class="divBandejas"></div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-  
-        <div class="estructura row">
-          <h2 class="titulosprod titulosprod2">CAJAS</h2>
-          <h3 class="col-4 cajaspc h2prod">Las mejores cajas con detalles artisticos unicos. Variedades de modelos y colores para todos los gustos.</h3>
-          <div class="carrete col-8">  
-            <div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="5" aria-label="Slide 6"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                  <img src="../img/caja1.jpg" data-id="7" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Caja Pink</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/caja2.jpg" data-id="8" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Caja Sugar</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/caja3.jpg" data-id="9" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Caja Dorada</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/caja4.jpg" data-id="10" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Caja Ave</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/caja5.jpg" data-id="11" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Caja Sol</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/caja6.jpg" data-id="12" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Caja Graffity</h5>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-          </div>
-        </div>
-        <h3 class="col-4 cajascel h2prod about">Las mejores cajas con detalles artisticos unicos. Variedades de modelos y colores para todos los gustos.</h3>
-        <div class=" divCajas"></div>
-        </div>
-  
-        <div class="estructura row">
-          <h2 class="titulosprod titulosprod2">MUEBLES</h2>
-          <div class="carrete col-8">  
-            <div id="carouselExampleDark3" class="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="5" aria-label="Slide 6"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                  <img src="../img/mueble1.jpg" data-id="13" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Mueble Floral</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/mueble2.jpg" data-id="14" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Mueble White</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/mueble3.jpg" data-id="15" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Mueble Kubik</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/mueble4.jpg" data-id="16" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Mueble Totem</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/mueble5.jpg" data-id="17" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Mueble Old</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="../img/mueble6.jpg" data-id="18" class="d-block w-100 img-catalogo" alt="...">
-                  <div class="carousel-caption d-md-block">
-                    <h5>Mueble Cajonera</h5>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-          </div>
-        </div>
-        <h3 class="col-4 h2prod about">Los mejores muebles con detalles artisticos unicos. Variedades de modelos y colores para todos los gustos.</h3>
-        <div class=" divMuebles"></div>
-        </div>    
+      </div>
+      <h3 class="col-4 h2prod about">Las mejores bandejas con detalles artisticos unicos. Variedades de modelos y
+        colores para todos los gustos.</h3>
+      <div class="divBandejas"></div>
+    </div>
 
-        <div class="products-preview">
-          
-        </div>
-    </main>
-    <div class="container fondofooter">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
-          <div class="col-md-6 d-flex align-items-center">
-            <a href="../index.html" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z"/>
-              </svg>
-            </a>
-            <span class="mb-3 mb-md-0 text-muted">&copy; 2022, A Mi Manera.<br>Desarrollado por DuranDs.</span>
+    <div class="estructura row">
+      <h2 class="titulosprod titulosprod2">CAJAS</h2>
+      <h3 class="col-4 cajaspc h2prod">Las mejores cajas con detalles artisticos unicos. Variedades de modelos y colores
+        para todos los gustos.</h3>
+      <div class="carrete col-8">
+        <div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="4"
+              aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="5"
+              aria-label="Slide 6"></button>
           </div>
-      
-          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="footerig" href="https://www.instagram.com/"><svg class="bi" width="32" height="32"><use xlink:href="#instagram"/></svg></a></li>
-            <li class="ms-3"><a class="footerfb" href="https://www.facebook.com/"><svg class="bi" width="32" height="32"><use xlink:href="#facebook"/></svg></a></li>
-          </ul>
-        </footer>
-      </div>  
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.8/dist/sweetalert2.all.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img src="../img/caja1.jpg" data-id="7" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Caja Pink</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/caja2.jpg" data-id="8" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Caja Sugar</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/caja3.jpg" data-id="9" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Caja Dorada</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/caja4.jpg" data-id="10" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Caja Ave</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/caja5.jpg" data-id="11" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Caja Sol</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/caja6.jpg" data-id="12" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Caja Graffity</h5>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <h3 class="col-4 cajascel h2prod about">Las mejores cajas con detalles artisticos unicos. Variedades de modelos y
+        colores para todos los gustos.</h3>
+      <div class=" divCajas"></div>
+    </div>
+
+    <div class="estructura row">
+      <h2 class="titulosprod titulosprod2">MUEBLES</h2>
+      <div class="carrete col-8">
+        <div id="carouselExampleDark3" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="4"
+              aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="5"
+              aria-label="Slide 6"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img src="../img/mueble1.jpg" data-id="13" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Mueble Floral</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/mueble2.jpg" data-id="14" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Mueble White</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/mueble3.jpg" data-id="15" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Mueble Kubik</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/mueble4.jpg" data-id="16" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Mueble Totem</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/mueble5.jpg" data-id="17" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Mueble Old</h5>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../img/mueble6.jpg" data-id="18" class="d-block w-100 img-catalogo" alt="...">
+              <div class="carousel-caption d-md-block">
+                <h5>Mueble Cajonera</h5>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark3"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark3"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <h3 class="col-4 h2prod about">Los mejores muebles con detalles artisticos unicos. Variedades de modelos y colores
+        para todos los gustos.</h3>
+      <div class=" divMuebles"></div>
+    </div>
+    <div class="products-preview"></div>
+  </main>
+  <div class="container fondofooter">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+      <div class="col-md-6 d-flex align-items-center">
+        <a href="../index.html" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hearts"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z" />
+          </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-muted">&copy; 2022, A Mi Manera.<br>Desarrollado por DuranDs.</span>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="footerig" href="https://www.instagram.com/"><svg class="bi" width="32" height="32">
+              <use xlink:href="#instagram" />
+            </svg></a></li>
+        <li class="ms-3"><a class="footerfb" href="https://www.facebook.com/"><svg class="bi" width="32" height="32">
+              <use xlink:href="#facebook" />
+            </svg></a></li>
+      </ul>
+    </footer>
+  </div>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/carrito.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.8/dist/sweetalert2.all.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>
