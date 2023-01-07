@@ -378,9 +378,7 @@ select:disabled {
 button,
 [type=button],
 [type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-}
+[type=submit] 
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
@@ -435,11 +433,6 @@ legend + * {
   height: auto;
 }
 
-[type=search] {
-  outline-offset: -2px;
-  -webkit-appearance: textfield;
-}
-
 /* rtl:raw:
 [type="tel"],
 [type="url"],
@@ -463,7 +456,6 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
 }
 
 output {
@@ -2597,9 +2589,6 @@ textarea.form-control-lg {
     -webkit-transition: none;
     transition: none;
   }
-}
-.form-range::-webkit-slider-thumb:active {
-  background-color: #b6d4fe;
 }
 .form-range::-webkit-slider-runnable-track {
   width: 100%;

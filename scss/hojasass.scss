@@ -438,7 +438,7 @@ body {
     :hover{
         img{
             transition: all 400ms ease-out;
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
     }
 }
@@ -605,7 +605,7 @@ body {
     margin: 30px 30px;
     background-color: rgba(255, 255, 255, 0.7) ;
     border: 3px solid #20bbb3;
-    box-shadow: 8px 8px 6px rgba(0, 0, 0, .5);
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, .5);
     .titulosprod{
         text-align: center;
         margin: 10px;
